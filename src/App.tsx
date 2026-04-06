@@ -224,53 +224,67 @@ export default function App() {
     setError(null);
   };
 
-  const getBackgroundImage = (condition: string, isDay: boolean) => {
-    const cond = condition.toLowerCase();
-    if (cond.includes('thunderstorm') || cond.includes('lightning')) {
-      return "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?q=80&w=2000&auto=format&fit=crop";
-    }
-    if (cond.includes('rain') || cond.includes('drizzle')) {
-      return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=2000&auto=format&fit=crop";
-    }
-    if (cond.includes('cloud')) {
-      return isDay 
-        ? "https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=2000&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2000&auto=format&fit=crop";
-    }
-    if (cond.includes('snow')) {
-      return "https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=2000&auto=format&fit=crop";
-    }
-    if (cond.includes('mist') || cond.includes('fog') || cond.includes('haze')) {
-      return "https://images.unsplash.com/photo-1485236715598-ad2400ca5f04?q=80&w=2000&auto=format&fit=crop";
-    }
-    // Default Clear / Sunny
-    return isDay 
-      ? "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=2000&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1532973330544-84695626070e?q=80&w=2000&auto=format&fit=crop";
-  };
+  // ONLY showing changed parts + full structure (rest unchanged)
 
-  const getCardBackgroundImage = (condition: string, isDay: boolean) => {
-    const cond = condition.toLowerCase();
-    if (cond.includes('thunderstorm') || cond.includes('lightning')) {
-      return "https://images.unsplash.com/photo-1516912403328-e9997f630ad7?q=80&w=1000&auto=format&fit=crop";
-    }
-    if (cond.includes('rain') || cond.includes('drizzle')) {
-      return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1000&auto=format&fit=crop";
-    }
-    if (cond.includes('cloud')) {
-      return isDay 
-        ? "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=1000&auto=format&fit=crop"
-        : "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop";
-    }
-    if (cond.includes('snow')) {
-      return "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop";
-    }
-    // Default Clear / Sunny
-    return isDay 
-      ? "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1000&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=1000&auto=format&fit=crop";
-  };
+// 🔥 UPDATED FUNCTIONS
 
+const getBackgroundImage = (condition: string, isDay: boolean) => {
+  const cond = condition.toLowerCase();
+
+  if (cond.includes('thunderstorm') || cond.includes('lightning')) {
+    return "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?q=80&w=2000&auto=format&fit=crop";
+  }
+
+  if (cond.includes('rain') || cond.includes('drizzle')) {
+    return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=2000&auto=format&fit=crop";
+  }
+
+  // ✅ CLOUD FIX
+  if (cond.includes('cloud') || cond.includes('overcast')) {
+    return isDay 
+      ? "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2000&auto=format&fit=crop"
+      : "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop";
+  }
+
+  if (cond.includes('snow')) {
+    return "https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=2000&auto=format&fit=crop";
+  }
+
+  if (cond.includes('mist') || cond.includes('fog') || cond.includes('haze')) {
+    return "https://images.unsplash.com/photo-1485236715598-ad2400ca5f04?q=80&w=2000&auto=format&fit=crop";
+  }
+
+  return isDay 
+    ? "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=2000&auto=format&fit=crop"
+    : "https://images.unsplash.com/photo-1532973330544-84695626070e?q=80&w=2000&auto=format&fit=crop";
+};
+
+const getCardBackgroundImage = (condition: string, isDay: boolean) => {
+  const cond = condition.toLowerCase();
+
+  if (cond.includes('thunderstorm') || cond.includes('lightning')) {
+    return "https://images.unsplash.com/photo-1516912403328-e9997f630ad7?q=80&w=1000&auto=format&fit=crop";
+  }
+
+  if (cond.includes('rain') || cond.includes('drizzle')) {
+    return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1000&auto=format&fit=crop";
+  }
+
+  // ✅ CLOUD FIX
+  if (cond.includes('cloud') || cond.includes('overcast')) {
+    return isDay 
+      ? "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=1000&auto=format&fit=crop"
+      : "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop";
+  }
+
+  if (cond.includes('snow')) {
+    return "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=1000&auto=format&fit=crop";
+  }
+
+  return isDay 
+    ? "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1000&auto=format&fit=crop"
+    : "https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=1000&auto=format&fit=crop";
+};
   return (
     <div className={`min-h-screen ${weather ? (weather.isDay ? 'bg-sky-500' : 'bg-slate-950') : 'bg-[#111]'} text-white flex flex-col items-center p-4 md:p-6 font-sans selection:bg-orange-500/30 transition-colors duration-1000`}>
       {/* Background Image Placeholder */}
