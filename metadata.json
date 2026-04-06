@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Weather Dashboard",
+  "description": "A real-time weather dashboard powered by Gemini AI to fetch weather information for any city.",
+  "requestFramePermissions": []
+}
