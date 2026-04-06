@@ -50,7 +50,6 @@ Create a .env file in the root directory and add:
 ## Live Demo
 See deployed app here:  
 https://weather-dashboard-skycast.vercel.app/
----
 
 ## Notes
 
@@ -58,8 +57,6 @@ https://weather-dashboard-skycast.vercel.app/
 - Includes visual transitions for different weather types and time of day  
 - Designed with responsiveness and user experience in mind  
 - Built to simulate a real-world weather dashboard  
-
----
 
 ## Author
 Developed as part of coursework assignment.
