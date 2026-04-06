@@ -54,7 +54,7 @@ interface WeatherData {
 }
 
 const RECENT_SEARCHES_KEY = 'weather_recent_searches';
-const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY || '9e3ec60e4b3370bde9a4f23772a67828';
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
 export default function App() {
   const [city, setCity] = useState('');
