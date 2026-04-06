@@ -224,10 +224,6 @@ export default function App() {
     setError(null);
   };
 
-  // ONLY showing changed parts + full structure (rest unchanged)
-
-// 🔥 UPDATED FUNCTIONS
-
 const getBackgroundImage = (condition: string, isDay: boolean) => {
   const cond = condition.toLowerCase();
 
@@ -239,11 +235,9 @@ const getBackgroundImage = (condition: string, isDay: boolean) => {
     return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=2000&auto=format&fit=crop";
   }
 
-  // ✅ CLOUD FIX
+  // ✅ YOUR CUSTOM CLOUD IMAGE
   if (cond.includes('cloud') || cond.includes('overcast')) {
-    return isDay 
-      ? "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2000&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop";
+    return "https://t4.ftcdn.net/jpg/05/13/26/73/360_F_513267391_QEmNGeOFLLqrILTnoq21dReUPp5UsoNr.jpg";
   }
 
   if (cond.includes('snow')) {
@@ -258,7 +252,6 @@ const getBackgroundImage = (condition: string, isDay: boolean) => {
     ? "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=2000&auto=format&fit=crop"
     : "https://images.unsplash.com/photo-1532973330544-84695626070e?q=80&w=2000&auto=format&fit=crop";
 };
-
 const getCardBackgroundImage = (condition: string, isDay: boolean) => {
   const cond = condition.toLowerCase();
 
@@ -270,11 +263,9 @@ const getCardBackgroundImage = (condition: string, isDay: boolean) => {
     return "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1000&auto=format&fit=crop";
   }
 
-  // ✅ CLOUD FIX
+  // ✅ SAME CLOUD IMAGE (for consistency)
   if (cond.includes('cloud') || cond.includes('overcast')) {
-    return isDay 
-      ? "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=1000&auto=format&fit=crop"
-      : "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop";
+    return "https://t4.ftcdn.net/jpg/05/13/26/73/360_F_513267391_QEmNGeOFLLqrILTnoq21dReUPp5UsoNr.jpg";
   }
 
   if (cond.includes('snow')) {
