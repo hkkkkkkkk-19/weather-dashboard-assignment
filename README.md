@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Weather Dashboard
 
-# Run and deploy your AI Studio app
+A simple weather dashboard built with React and TypeScript that displays current weather, daily forecasts, and more.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/e37600db-048f-4bd6-9f8a-717e55d7e58f
+## 🔑 Setup
 
-## Run Locally
+### 1. Get your API key
+- Sign up at [OpenWeather](https://openweathermap.org/api)  
+- Generate your API key
 
-**Prerequisites:**  Node.js
+### 2. Add your API key
 
+#### a) In `.env` file (recommended)
+Create a `.env` in the root folder and add:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```env
+VITE_OPENWEATHER_API_KEY=your_api_key_here
